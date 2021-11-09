@@ -48,7 +48,7 @@ print(c)
 #           will return for where the value is true
 b = filter(lambda x: x % 2 == 0, a)
 print(list(b))
-# can also use list comprehensiongit c
+# can also use list comprehensiongit c:
 c = [x for x in a if x % 2 == 0]
 print(c)
 
