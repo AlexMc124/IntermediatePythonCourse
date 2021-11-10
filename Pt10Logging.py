@@ -1,8 +1,10 @@
 # Logging :
 import logging
+import logging.config
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%m/%d/%Y %H:%MM:%S')
 import helper
+import traceback
 
 
 # can log to 5 diff log levels
@@ -49,3 +51,23 @@ logger.warning("This is a warning")
 logger.error("This is an error")
 
 # USING DICT CONFIG METHOD
+# this uses the imported logging.conf fil found at the top of the file
+logger = logging.getLogger('simpleExample')
+logger.debug('This is a debug message')
+
+
+
+logging.config.dictConfig('logging.conf')
+
+# CAPTURING STACK TRACES IN YOUR LOG 
+# can use the logging.exception() method to capture the stack trace
+try:
+    a = [1,2,3]
+    # try to access a non existing index
+    val = a[4]
+except IndexError as e:
+    logging.error(e, exc_info=True)
+    # to aslo capture the stack trace
+# catch all errors 
+except:
+    logging.error("The error is %s", traceback.format_exc())
