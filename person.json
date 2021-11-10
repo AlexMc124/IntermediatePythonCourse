@@ -1,0 +1,15 @@
+{
+    "age": 32,
+    "firstName": "Sam",
+    "hasChildren": false,
+    "hobbies": [
+        "dancing",
+        "flying",
+        "coding"
+    ],
+    "lastName": "Smith",
+    "titles": [
+        "engineer",
+        "programmer"
+    ]
+}
