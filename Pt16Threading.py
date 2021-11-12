@@ -1,4 +1,4 @@
-from threading import Thread, Lock, Queue
+from threading import Thread, Lock
 import time 
 
 # make a global variable
